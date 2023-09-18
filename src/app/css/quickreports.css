@@ -1,0 +1,43 @@
+/* Styles pour QuickReports */
+
+.quick-reports {
+    background-color: #f7f7f7; /* couleur de fond claire pour le contraste */
+    padding: 20px;
+    border-radius: 8px; /* coins arrondis pour un aspect moderne */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ombre légère pour une impression de profondeur */
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+.quick-reports h2 {
+    font-size: 20px;
+    margin-bottom: 15px; 
+    color: #333; /* couleur de texte foncée */
+    border-bottom: 2px solid #ddd; /* une ligne en dessous du titre pour une séparation visuelle */
+    padding-bottom: 10px;
+}
+
+.quick-reports button {
+    background-color: #3498db; /* une couleur bleue pour les boutons */
+    color: #fff; /* texte blanc sur les boutons */
+    padding: 10px 15px; 
+    font-size: 16px;
+    border: none;
+    border-radius: 5px; /* coins légèrement arrondis pour les boutons */
+    cursor: pointer; /* pointeur de souris pour indiquer que c'est cliquable */
+    transition: background-color 0.3s; /* transition douce pour le survol des boutons */
+    margin-right: 10px; /* espacement entre les boutons */
+    margin-bottom: 10px; /* espacement entre les boutons et d'autres éléments ci-dessous */
+}
+
+.quick-reports button:hover {
+    background-color: #2980b9; /* une couleur bleue légèrement plus foncée pour l'effet de survol */
+}
+
+/* Si vous souhaitez ajouter des styles pour l'état actif du bouton (lorsqu'il est cliqué) */
+.quick-reports button:active {
+    background-color: #2471a3; 
+    transform: scale(0.98); /* légère réduction de la taille pour un effet "pressé" */
+}

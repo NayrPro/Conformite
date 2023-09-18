@@ -1,95 +1,51 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client'
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+import './page.module.css'
+import './general.css'
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+import React from 'react';
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+// Composants fictifs pour l'illustration
+import Notifications from './Notifications';
+import AuditCalendar from './AuditCalendar';
+import ComplianceProgress from './ComplianceProgress';
+import QuickReports from './QuickReports';
+import SearchBar from './SearchBar';
+import ComplianceCharts from './ComplianceCharts';
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+class Dashboard extends React.Component {
+    state = {
+        // Données fictives pour l'illustration
+        compliancePercentage: 85,
+        notifications: [
+            { id: 1, message: "Nouvelle régulation ajoutée", date: "2023-09-10" },
+            { id: 2, message: "Audit pour Politique 101 terminé", date: "2023-09-08" }
+        ]
+    };
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    render() {
+        return (
+            <div className="dashboard">
+                <h1>Tableau de bord de conformité</h1>
+                
+                <SearchBar />
+                
+                <Notifications notifications={this.state.notifications} />
+                
+                <div className="dashboard-content">
+                    <div className="left-panel">
+                        <ComplianceProgress percentage={this.state.compliancePercentage} />
+                        <AuditCalendar />
+                    </div>
+                    
+                    <div className="right-panel">
+                        <QuickReports />
+                        <ComplianceCharts />
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
+
+export default Dashboard;

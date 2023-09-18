@@ -1,0 +1,43 @@
+/* Styles pour AuditCalendar */
+.audit-calendar {
+    background-color: #f7f8fa;  /* Couleur de fond légère pour le contraste */
+    border-radius: 8px;  /* Arrondir les coins */
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);  /* Ombre légère pour une sensation de profondeur */
+    max-width: 400px;  /* Largeur maximale pour contrôler la taille */
+    margin: 20px 0;  /* Espacement autour du composant */
+}
+
+.audit-calendar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;  /* Couleur de texte foncée */
+    border-bottom: 2px solid #ddd;  /* Une ligne sous le titre pour le séparer du contenu */
+    padding-bottom: 10px;
+}
+
+.audit-calendar ul {
+    list-style-type: none;  /* Supprimer les puces des listes */
+    padding: 0;  /* Supprimer le padding par défaut */
+}
+
+.audit-calendar li {
+    padding: 10px 0;  /* Espacement vertical entre les éléments de la liste */
+    border-bottom: 1px solid #e6e6e6;  /* Ligne entre chaque audit pour une meilleure séparation */
+}
+
+.audit-calendar li:last-child {
+    border-bottom: none;  /* Supprimer la bordure pour le dernier élément */
+}
+
+/* Styles pour les labels des audits */
+.audit-calendar li strong {
+    margin-right: 10px;
+    color: #666;  /* Une couleur un peu plus claire pour les labels */
+}
+
+/* Pour ajouter un peu de style aux dates importantes, par exemple */
+.audit-calendar li.important {
+    font-weight: bold;
+    color: #e74c3c;  /* Une couleur rouge pour l'urgence ou l'importance */
+}
